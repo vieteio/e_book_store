@@ -14,6 +14,7 @@
    Actions:
    - validateFormat(file) -> validationResult
    - convertFormat(file) -> convertedFile
+   - flagForManualReview(jobId, issue) -> reviewStatus
 
 3. Metadata Processor
    Description: Extracts, cross-references, and enriches e-book metadata
@@ -51,6 +52,7 @@
    Actions:
    - notifyAuthor(authorId, message) -> notificationStatus
    - notifyInternalTeam(teamId, message) -> notificationStatus
+   - notifyForManualReview(jobId, issue) -> notificationStatus
 
 9. Analytics Service
    Description: Updates internal analytics with ingestion data
@@ -66,6 +68,8 @@
 2. Format Validation and Conversion
    - Format Validator: validateFormat(file) -> validationResult
    - Format Validator: convertFormat(file) -> convertedFile
+   - Format Validator: flagForManualReview(jobId, issue) -> reviewStatus (if issues detected)
+   - Notification Service: notifyForManualReview(jobId, issue) -> notificationStatus (if issues detected)
 
 3. Metadata Extraction and Enrichment
    - Metadata Processor: extractMetadata(file) -> extractedMetadata

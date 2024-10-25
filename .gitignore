@@ -1,9 +1,8 @@
 content_ingestion/frontend/node_modules/
+content_ingestion/frontend/.env
 
 *.pyc
 
 __pycache__/
-
-.env
 
 yarn.lock

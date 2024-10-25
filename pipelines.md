@@ -48,6 +48,13 @@
 7. Conversion metadata updated in PostgreSQL
 8. Return convertedFile location
 
+### flagForManualReview(jobId, issue)
+1. FastAPI endpoint receives flagging request
+2. PostgreSQL updates job status to "needs review"
+3. Issue details stored in PostgreSQL
+4. Notification Service triggered for manual review alert
+5. Return reviewStatus
+
 ## 3. Metadata Processor
 
 ### extractMetadata(file)
@@ -164,6 +171,16 @@
 4. Email sent via AWS SES for offline notification
 5. Notification logged in ELK stack
 6. Return notificationStatus
+
+### notifyForManualReview(jobId, issue)
+1. FastAPI endpoint receives manual review notification request
+2. Job details retrieved from PostgreSQL
+3. Email content generated from template
+4. AWS SES sends email to content team
+5. Slack message composed with job details and issue
+6. Slack API posts message to #content-ingestion channel
+7. Notification status logged in PostgreSQL
+8. Return notificationStatus
 
 ## 9. Analytics Service
 
