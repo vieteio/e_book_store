@@ -1,0 +1,12 @@
+fastapi
+uvicorn
+pydantic
+boto3
+spacy
+ebooklib
+PyPDF2
+# tensorflow
+# pandas
+pymongo
+psycopg2-binary
+python-multipart
