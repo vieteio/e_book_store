@@ -48,11 +48,14 @@
    - generatePreviewLink(bookId) -> previewLink
 
 8. Notification Service
-   Description: Sends notifications to authors and internal teams
+   Description: Sends notifications to authors and internal teams through multiple channels
    Actions:
    - notifyAuthor(authorId, message) -> notificationStatus
    - notifyInternalTeam(teamId, message) -> notificationStatus
    - notifyForManualReview(jobId, issue) -> notificationStatus
+     - Supports email notifications via AWS SES
+     - Configurable platform support for Slack and/or Microsoft Teams
+     - Error handling for each notification channel
 
 9. Analytics Service
    Description: Updates internal analytics with ingestion data

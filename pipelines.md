@@ -177,10 +177,13 @@
 2. Job details retrieved from PostgreSQL
 3. Email content generated from template
 4. AWS SES sends email to content team
-5. Slack message composed with job details and issue
-6. Slack API posts message to #content-ingestion channel
-7. Notification status logged in PostgreSQL
-8. Return notificationStatus
+5. Based on platform configuration:
+   - For Slack: Slack API posts message to #content-ingestion channel
+   - For Teams: Teams webhook sends message card to configured channel
+   - For Both: Messages sent to both platforms
+6. Notification status logged in PostgreSQL
+7. Error handling for each notification channel
+8. Return aggregated notification status
 
 ## 9. Analytics Service
 

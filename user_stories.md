@@ -29,7 +29,10 @@ As a content specialist at the e-book marketplace company, I want to ingest a ne
    - The software automatically detects the file format (EPUB).
    - It runs a series of validation checks to ensure the EPUB meets our standards.
    - The software converts the EPUB to our proprietary format, optimizing it for our reading applications.
-   - If any issues are detected during validation or conversion, the software flags the job for manual review and notifies the appropriate team members via email and Slack.
+   - If any issues are detected during validation or conversion:
+     - The software flags the job for manual review
+     - Notifies the content team via email and configured messaging platform (Slack and/or Teams)
+     - Includes job ID and issue details in notifications
 
 3. **Metadata Extraction and Enrichment**
    - The software extracts additional metadata from the EPUB file (e.g., table of contents, chapter titles).
